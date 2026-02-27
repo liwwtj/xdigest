@@ -1,0 +1,38 @@
+# LLM 配置 (Anthropic Claude)
+# 优先从 config 读取，fallback 到环境变量 ANTHROPIC_AUTH_TOKEN / ANTHROPIC_BASE_URL
+llm:
+  api_key: "your-anthropic-api-key"
+  base_url: "https://api.anthropic.com"  # 或自定义代理地址
+  model: "claude-haiku-4-5-20251001"
+  max_tokens: 8000
+
+# Twitter 抓取配置
+twitter:
+  username: ""  # 你的 Twitter 用户名（用于自动获取关注列表）
+  tweets_per_account: 10
+  max_tweet_age_hours: 9
+  request_delay: 3
+  proxy: ""  # 代理地址，不需要则留空
+  enable_thread_merging: true  # 自动合并 self-thread
+  max_thread_fetches: 3  # 每账号最多额外请求 thread 次数
+
+# 邮件配置 (QQ邮箱 SMTP)
+email:
+  provider: smtp
+  smtp_server: smtp.qq.com
+  smtp_port: 587
+  smtp_username: "your@qq.com"
+  smtp_password: "your-smtp-authorization-code"
+  from_email: "your@qq.com"
+  to_email: "your@qq.com"
+  subject_prefix: "X简报"
+
+# 账号列表文件
+accounts_file: "accounts.yaml"
+
+# 监控配置
+monitoring:
+  enable_logging: true
+  log_file: "logs/digest.log"
+  enable_stats: true
+  stats_file: "logs/stats.json"
