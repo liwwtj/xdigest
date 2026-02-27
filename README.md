@@ -1,6 +1,6 @@
-# Twitter AI Digest
+# xdigest
 
-抓取 AI 领域 Twitter 大佬推文，通过 LLM 生成中文日报摘要，邮件发送。
+抓取指定 Twitter 账号的推文，通过 LLM 生成中文日报摘要，邮件发送。
 
 ## 快速开始
 
