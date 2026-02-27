@@ -1,6 +1,6 @@
 # xdigest
 
-抓取指定 Twitter 账号的推文，通过 LLM 生成中文日报摘要，邮件发送。
+抓取指定 X 账号的推文，通过 LLM 生成中文日报摘要，邮件发送。
 
 ## 快速开始
 
@@ -37,9 +37,9 @@ twitter:
   proxy: ""  # VPS不需要代理
 ```
 
-### 3. 配置 Twitter Cookies
+### 3. 配置 X Cookies
 
-从浏览器导出 Twitter 登录 cookies 到 `cookies.json`
+从浏览器导出 X 登录 cookies 到 `cookies.json`
 
 ### 4. 运行
 
@@ -92,12 +92,12 @@ crontab -e
 
 ```
 ├── main.py              # 主程序入口
-├── twitter_fetcher.py   # Twitter 推文抓取
+├── twitter_fetcher.py   # X 推文抓取
 ├── llm_summarizer.py    # LLM 摘要生成
 ├── email_sender.py      # 邮件发送
 ├── config.yaml          # 配置文件
-├── accounts.yaml        # 监控的 Twitter 账号列表
-├── cookies.json         # Twitter 登录凭证（需自行从浏览器导出，不含在仓库中）
+├── accounts.yaml        # 监控的 X 账号列表
+├── cookies.json         # X 登录凭证（需自行从浏览器导出，不含在仓库中）
 ├── run.sh               # 运行脚本
 ├── logs/                # 日志目录
 └── output/              # 生成的摘要文件
