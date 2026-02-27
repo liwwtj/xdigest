@@ -51,43 +51,6 @@ twitter:
 ./run.sh --test
 ```
 
-## VPS 部署 (Debian)
-
-需要 Python 3.10+（twikit 依赖）
-
-```bash
-# 1. 安装 pyenv
-curl https://pyenv.run | bash
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-source ~/.bashrc
-
-# 2. 安装 Python 3.10
-pyenv install 3.10.13
-
-# 3. 上传项目文件
-scp -r twitter_ai_digest user@vps:~/
-
-# 4. 在 VPS 上配置
-cd ~/twitter_ai_digest
-pyenv local 3.10.13
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
-# 5. 测试
-./run.sh --test
-```
-
-## 定时任务
-
-```bash
-crontab -e
-# 每天早上 8 点运行 (UTC 时间，北京时间 16:00)
-0 8 * * * cd /home/youruser/twitter_ai_digest && ./venv/bin/python main.py >> logs/cron.log 2>&1
-```
-
 ## 文件结构
 
 ```
